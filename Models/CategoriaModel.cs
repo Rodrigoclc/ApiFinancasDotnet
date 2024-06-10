@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Financas.Models
 {
-    public class UsuarioModel
+    public class CategoriaModel
     {
         [Key]
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Senha { get; set; }
+        public int IdCategoria { get; set; }
+        public int IdProjeto { get; set; }
+        public int IdUsuario { get; set; }
+        public string NomeCategoria { get; set; }
         public bool Ativo { get; set; }
     }
 }
