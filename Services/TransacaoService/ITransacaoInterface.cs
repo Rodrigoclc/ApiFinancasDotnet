@@ -8,7 +8,7 @@ namespace Financas.Services.TransacaoService
 {
     public interface ITransacaoInterface
     {
-        RetornoModel<TransacaoModel> AdicionarTransacao(TransacaoModel transacao);
-        RetornoModel<List<TransacaoModel>> BuscarTodasTransacoes();
+        Task<RetornoModel<TransacaoModel>> AdicionarTransacao(TransacaoModel transacao);
+        Task<RetornoModel<List<TransacaoModel>>> BuscarTodasTransacoes();
     }
 }

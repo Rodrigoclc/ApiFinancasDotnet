@@ -1,4 +1,5 @@
 using Financas.DataContext;
+using Financas.Services.TransacaoService;
 using Financas.Services.UsuarioService;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUsuarioInterface,UsuarioService>();
+builder.Services.AddScoped<ITransacaoInterface,TransacaoService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnetion"));

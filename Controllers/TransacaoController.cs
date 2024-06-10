@@ -12,18 +12,21 @@ namespace Financas.Controllers
     [Route("api/[controller]")]
     public class TransacaoController : ControllerBase
     {
-        [HttpPost]
-        public IActionResult Transacao(TransacaoModel transacao)
+        private readonly ITransacaoInterface _transacao;
+        public TransacaoController(ITransacaoInterface transacao)
         {
-            TransacaoService transacaoService = new();
-            return Ok(transacaoService.AdicionarTransacao(transacao));
+            _transacao = transacao;
+        }
+        [HttpPost]
+        public async Task<ActionResult<RetornoModel<TransacaoModel>>> Transacao(TransacaoModel transacao)
+        {
+            return Ok( await _transacao.AdicionarTransacao(transacao));
         }
 
         [HttpGet]
-        public IActionResult GetTodasTransacoes()
+        public async Task<ActionResult<RetornoModel<TransacaoModel>>> GetTodasTransacoes()
         {
-            TransacaoService transacaoService = new();
-            return Ok(transacaoService.BuscarTodasTransacoes());
+            return Ok( await _transacao.BuscarTodasTransacoes());
         }
     }
 }
