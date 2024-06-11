@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiFinancasDotnet.Enums;
 
 namespace Financas.Models
 {
@@ -14,6 +15,7 @@ namespace Financas.Models
         public decimal Valor { get; set; }
         public string Descricao { get; set; }
         public string Categoria { get; set; }
+        public RendaDespesaEnum RendaDespesa { get; set; }
         public bool Ativo { get; set; }
     }
 }
