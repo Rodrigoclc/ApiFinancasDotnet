@@ -1,3 +1,4 @@
+using ApiFinancasDotnet.Services.ProjetoService;
 using Financas.DataContext;
 using Financas.Services.TransacaoService;
 using Financas.Services.UsuarioService;
@@ -12,6 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUsuarioInterface,UsuarioService>();
+builder.Services.AddScoped<IProjetoInterface,ProjetoService>();
 builder.Services.AddScoped<ITransacaoInterface,TransacaoService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => {
